@@ -82,3 +82,30 @@ if __name__=='__main__':
 	pw3 = sum([pxw_pw(pxw(w3, x2), pw) for x2 in pw_x2_range])
 	classify(pw1, pw2, pw3)
 
+
+
+	p1d_doc_string = """
+		--- Problem #48 Part D: ---
+	"""
+	print(p1d_doc_string)
+
+
+	# code purposefully left repetative for the sake of explicitness
+	pw = 0.333 # <- same for all w
+	x = numpy.matrix('0.2 ; 0.6')
+	pw1 = pxw_pw(pxw(w1, x), pw)
+	pw2 = pxw_pw(pxw(w2, x), pw)
+	pw3 = pxw_pw(pxw(w3, x), pw)
+	classify(pw1, pw2, pw3)
+
+	pw_x1_range = [numpy.matrix([[x1], [0.6]]) for x1 in range(-100, 100)]
+	pw1 = sum([pxw_pw(pxw(w1, x1), pw) for x1 in pw_x1_range])
+	pw2 = sum([pxw_pw(pxw(w2, x1), pw) for x1 in pw_x1_range])
+	pw3 = sum([pxw_pw(pxw(w3, x1), pw) for x1 in pw_x1_range])
+	classify(pw1, pw2, pw3)
+
+	pw_x2_range = [numpy.matrix([[0.2], [x2]]) for x2 in range(-100, 100)]
+	pw1 = sum([pxw_pw(pxw(w1, x2), pw) for x2 in pw_x2_range])
+	pw2 = sum([pxw_pw(pxw(w2, x2), pw) for x2 in pw_x2_range])
+	pw3 = sum([pxw_pw(pxw(w3, x2), pw) for x2 in pw_x2_range])
+	classify(pw1, pw2, pw3)
